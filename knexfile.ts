@@ -10,6 +10,8 @@ const config: { [key: string]: Knex.Config } = {
             database: env.DB_SQL_DB,
             user: env.DB_SQL_USER,
             password: env.DB_SQL_PASS,
+            host: env.DB_SQL_HOST,
+            port: env.DB_SQL_PORT,
         },
         pool: {
             min: 2,
