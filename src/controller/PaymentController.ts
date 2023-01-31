@@ -21,7 +21,7 @@ export const create = async (req: Request, res: Response) => {
             order_id: data.id,
             status: data.status,
             title: data.title,
-            do_no_convert: data.do_no_convert,
+            do_not_convert: data.do_not_convert,
             orderable_id: data.orderable_id,
             price_currency: data.price_currency,
             price_amount: data.price_amount,
