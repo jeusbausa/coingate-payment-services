@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const createOrderSchemaBody = z.object({
     order_id: z.string().optional(),
+    artist_uid: z.string().uuid().min(1),
     price_amount: z.number().min(1),
     price_currency: z.string().min(1),
     receive_currency: z.string().min(1),

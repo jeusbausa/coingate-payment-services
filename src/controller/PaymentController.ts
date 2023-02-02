@@ -19,6 +19,7 @@ export const create = async (req: Request, res: Response) => {
 
         const result = await createTransaction({
             order_id: data.id,
+            artist_uid: req.body.artist_uid,
             status: data.status,
             title: data.title,
             do_not_convert: data.do_not_convert,
