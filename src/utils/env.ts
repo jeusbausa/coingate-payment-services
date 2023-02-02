@@ -10,6 +10,7 @@ interface IVariables {
     DB_SQL_DB: string;
     DB_SQL_USER: string;
     DB_SQL_PASS: string;
+    COINGATE_API_CALLBACK: string;
 }
 
 export const env = <IVariables>{
@@ -20,4 +21,5 @@ export const env = <IVariables>{
     DB_SQL_DB: process.env.DB_SQL_DB,
     DB_SQL_USER: process.env.DB_SQL_USER,
     DB_SQL_PASS: process.env.DB_SQL_PASS,
+    COINGATE_API_CALLBACK: process.env.COINGATE_API_CALLBACK,
 };
