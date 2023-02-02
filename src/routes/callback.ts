@@ -6,6 +6,6 @@ import { handleCallbackSchema } from "../utils/schema/callback";
 const router = Router();
 
 /** @todo add middleware for verifying token  */
-router.put("/", validation(handleCallbackSchema), handleCallback);
+router.post("/", validation(handleCallbackSchema), handleCallback);
 
 export default router;
