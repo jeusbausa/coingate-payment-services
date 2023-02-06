@@ -29,9 +29,9 @@ export const env = <IVariables>{
     DB_SQL_PASS: process.env.DB_SQL_PASS,
     COINGATE_API_CALLBACK: process.env.COINGATE_API_CALLBACK,
     PUSHER_APP_ID: process.env.PUSHER_APP_ID,
-    PUSHER_KEY: process.env.PUSHER_APP_ID,
-    PUSHER_SECRET: process.env.PUSHER_APP_ID,
-    PUSHER_CLUSTER: process.env.PUSHER_APP_ID,
+    PUSHER_KEY: process.env.PUSHER_KEY,
+    PUSHER_SECRET: process.env.PUSHER_SECRET,
+    PUSHER_CLUSTER: process.env.PUSHER_CLUSTER,
     PUSHER_CALLBACK_CHANNEL: process.env.PUSHER_CALLBACK_CHANNEL,
     PUSHER_CALLBACK_EVENT: process.env.PUSHER_CALLBACK_EVENT,
 };

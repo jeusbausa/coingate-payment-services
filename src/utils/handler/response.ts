@@ -13,7 +13,7 @@ export const sendError = (
     } else if (error instanceof DatabaseError) {
         return res.status(statusCode).send({ code: statusCode, message: error.message });
     } else {
-        return res.status(statusCode).send({ code: statusCode, message });
+        return res.status(statusCode).send({ code: statusCode, message, error });
     }
 };
 
