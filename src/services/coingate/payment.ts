@@ -1,11 +1,11 @@
 import { AxiosPromise } from "axios";
-import axios from "../../utils/axios";
+import coingate from "../../utils/api/coingate";
 import { ICheckoutSchemaBody, ICheckoutSchemaParams, ICreateOrderSchemaBody } from "../../utils/schema/createOrder";
 import { generateOrderId } from "../../utils/common";
 import { env } from "../../utils/env";
 
 const createOrder = async (body: ICreateOrderSchemaBody): AxiosPromise => {
-    return axios.post("orders", {
+    return coingate.post("/orders", {
         ...body,
         callback_url: env.COINGATE_API_CALLBACK,
         order_id: await generateOrderId(),
@@ -13,7 +13,7 @@ const createOrder = async (body: ICreateOrderSchemaBody): AxiosPromise => {
 };
 
 const checkout = async (body: ICheckoutSchemaBody, params: ICheckoutSchemaParams): AxiosPromise => {
-    return axios.post(`orders/${params.order_id}/checkout`, body);
+    return coingate.post(`/orders/${params.order_id}/checkout`, body);
 };
 
 export default {

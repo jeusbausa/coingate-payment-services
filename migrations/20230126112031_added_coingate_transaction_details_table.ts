@@ -1,10 +1,15 @@
+import _ from "lodash";
 import { Knex } from "knex";
+import { PackType } from "../src/utils/schema/paymentAuthorize";
 
 export async function up(knex: Knex): Promise<void> {
     return await knex.schema.createTable("coingate_transaction_details", (table: Knex.CreateTableBuilder) => {
         table.uuid("id").primary().defaultTo(knex.raw("uuid_generate_v4()"));
         table.string("order_id");
         table.uuid("artist_uid");
+        table.uuid("fan_uid");
+        table.uuid("collection_uid");
+        table.enum("pack_type", _.map(PackType, (type) => type));
         table.string("status");
         table.string("title").nullable();
         table.boolean("do_not_convert");

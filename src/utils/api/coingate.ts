@@ -1,8 +1,8 @@
 import axios from "axios";
-import { env } from "./env";
+import { env } from "../env";
 
 export default axios.create({
-    baseURL: env.COINGATE_API_URL ?? "localhost:3000",
+    baseURL: env.COINGATE_API_URL,
     withCredentials: true,
     headers: {
         Accept: "application/json",

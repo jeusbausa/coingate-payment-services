@@ -1,9 +1,9 @@
-import coingate from "../services/coingate/payment";
-import { createTransaction, getTransactions } from "../models/Transaction";
-import { Request, Response } from "express";
 import _ from "lodash";
-import { sendResponse, sendError } from "../utils/handler/response";
+import { createTransaction, getTransactions } from "../models/Transaction";
 import { ICheckoutSchemaParams } from "../utils/schema/createOrder";
+import { Request, Response } from "express";
+import { sendResponse, sendError } from "../utils/handler/response";
+import coingate from "../services/coingate/payment";
 
 export const get = async (req: Request, res: Response) => {
     try {
@@ -21,6 +21,9 @@ export const create = async (req: Request, res: Response) => {
         const result = await createTransaction({
             order_id: data.id,
             artist_uid: req.body.artist_uid,
+            fan_uid: req.body.fan_uid,
+            collection_uid: req.body.collection_uid,
+            pack_type: req.body.pack_type,
             status: data.status,
             title: data.title,
             do_not_convert: data.do_not_convert,

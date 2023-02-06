@@ -17,6 +17,7 @@ interface IVariables {
     PUSHER_CLUSTER: string;
     PUSHER_CALLBACK_CHANNEL: string;
     PUSHER_CALLBACK_EVENT: string;
+    CLOUTCHAIN_PAYMENT_API_URL: string;
 }
 
 export const env = <IVariables>{
@@ -34,4 +35,5 @@ export const env = <IVariables>{
     PUSHER_CLUSTER: process.env.PUSHER_CLUSTER,
     PUSHER_CALLBACK_CHANNEL: process.env.PUSHER_CALLBACK_CHANNEL,
     PUSHER_CALLBACK_EVENT: process.env.PUSHER_CALLBACK_EVENT,
+    CLOUTCHAIN_PAYMENT_API_URL: process.env.CLOUTCHAIN_PAYMENT_API_URL,
 };
