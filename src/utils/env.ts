@@ -11,6 +11,12 @@ interface IVariables {
     DB_SQL_USER: string;
     DB_SQL_PASS: string;
     COINGATE_API_CALLBACK: string;
+    PUSHER_APP_ID: string;
+    PUSHER_KEY: string;
+    PUSHER_SECRET: string;
+    PUSHER_CLUSTER: string;
+    PUSHER_CALLBACK_CHANNEL: string;
+    PUSHER_CALLBACK_EVENT: string;
 }
 
 export const env = <IVariables>{
@@ -22,4 +28,10 @@ export const env = <IVariables>{
     DB_SQL_USER: process.env.DB_SQL_USER,
     DB_SQL_PASS: process.env.DB_SQL_PASS,
     COINGATE_API_CALLBACK: process.env.COINGATE_API_CALLBACK,
+    PUSHER_APP_ID: process.env.PUSHER_APP_ID,
+    PUSHER_KEY: process.env.PUSHER_APP_ID,
+    PUSHER_SECRET: process.env.PUSHER_APP_ID,
+    PUSHER_CLUSTER: process.env.PUSHER_APP_ID,
+    PUSHER_CALLBACK_CHANNEL: process.env.PUSHER_CALLBACK_CHANNEL,
+    PUSHER_CALLBACK_EVENT: process.env.PUSHER_CALLBACK_EVENT,
 };

@@ -10,7 +10,7 @@ import { _knex } from "./src/utils/knex";
 const app: Application = express();
 
 app.use(cookieParser());
-app.use(morgan("combined"));
+app.use(morgan("common"));
 app.use(cors({ credentials: true, origin: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

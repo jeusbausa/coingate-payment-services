@@ -1,8 +1,9 @@
-import { createOrder } from "../services/Coingate/payment";
+import coingate from "../services/coingate/payment";
 import { createTransaction, getTransactions } from "../models/Transaction";
 import { Request, Response } from "express";
 import _ from "lodash";
 import { sendResponse, sendError } from "../utils/handler/response";
+import { ICheckoutSchemaParams } from "../utils/schema/createOrder";
 
 export const get = async (req: Request, res: Response) => {
     try {
@@ -15,7 +16,7 @@ export const get = async (req: Request, res: Response) => {
 
 export const create = async (req: Request, res: Response) => {
     try {
-        const { data } = await createOrder(req.body);
+        const { data } = await coingate.createOrder(req.body);
 
         const result = await createTransaction({
             order_id: data.id,
@@ -43,8 +44,15 @@ export const create = async (req: Request, res: Response) => {
 
         return sendResponse(res, _.first(result));
     } catch (error) {
-        console.log(error);
+        return sendError(error, res);
+    }
+};
 
+export const checkout = async (req: Request, res: Response) => {
+    try {
+        const { data } = await coingate.checkout(req.body, req.params as ICheckoutSchemaParams);
+        return sendResponse(res, data);
+    } catch (error) {
         return sendError(error, res);
     }
 };

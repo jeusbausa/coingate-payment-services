@@ -16,3 +16,18 @@ export const createOrderSchemaBody = z.object({
 });
 
 export type ICreateOrderSchemaBody = z.infer<typeof createOrderSchemaBody>;
+
+export const checkoutSchemaBody = z.object({
+    pay_currency: z.string().min(1),
+    lightning_network: z.number().optional(),
+    purchaser_email: z.string().optional(),
+    platform_id: z.number().optional(),
+});
+
+export type ICheckoutSchemaBody = z.infer<typeof checkoutSchemaBody>;
+
+export const checkoutSchemaParams = z.object({
+    order_id: z.string().min(1),
+});
+
+export type ICheckoutSchemaParams = z.infer<typeof checkoutSchemaParams>;
