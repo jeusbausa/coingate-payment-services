@@ -43,6 +43,7 @@ export const create = async (req: Request, res: Response) => {
             voids: data.voids,
             fees: data.fees,
             token: data.token,
+            quantity: req.body.quantity,
         });
 
         return sendResponse(res, _.first(result));

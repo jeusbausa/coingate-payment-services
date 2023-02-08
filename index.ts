@@ -4,6 +4,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import paymentRouter from "./src/routes/payment";
 import callbackRouter from "./src/routes/callback";
+import webhookRouter from "./src/routes/websocket";
 
 import { _knex } from "./src/utils/knex";
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use("/api/payment", paymentRouter);
 app.use("/api/callback", callbackRouter);
+app.use("/webhook", webhookRouter);
 
 const port = process.env.PORT ?? 4000;
 

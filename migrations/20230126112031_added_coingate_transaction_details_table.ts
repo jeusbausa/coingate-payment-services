@@ -10,6 +10,7 @@ export async function up(knex: Knex): Promise<void> {
         table.uuid("fan_uid");
         table.uuid("collection_uid");
         table.enum("pack_type", _.map(PackType, (type) => type));
+        table.string("quantity");
         table.string("status");
         table.string("title").nullable();
         table.boolean("do_not_convert");

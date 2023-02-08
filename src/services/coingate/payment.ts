@@ -7,6 +7,8 @@ import { env } from "../../utils/env";
 const createOrder = async (body: ICreateOrderSchemaBody): AxiosPromise => {
     return coingate.post("/orders", {
         ...body,
+        success_url: "http://example.com/success",
+        cancel_url: "http://example.com/cancel",
         callback_url: env.COINGATE_API_CALLBACK,
         order_id: await generateOrderId(),
     });
