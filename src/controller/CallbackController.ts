@@ -11,6 +11,7 @@ export const handleCallback = async (req: Request, res: Response) => {
     try {
         const response = await updateTransaction(req.body);
         const data = _.first(response);
+        console.log(data);
 
         if (_.isEqual(data.status, OrderDataStatus.paid)) {
             await payment.paymentAuthorize({
