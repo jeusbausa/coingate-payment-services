@@ -24,8 +24,6 @@ export const handleCallback = async (req: Request, res: Response) => {
         await pusher.trigger(env.PUSHER_CALLBACK_CHANNEL, env.PUSHER_CALLBACK_EVENT, data);
         return sendResponse(res, "ok");
     } catch (error: any) {
-        console.log(error.response);
-
         return sendError(error, res);
     }
 };

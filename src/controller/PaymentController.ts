@@ -16,6 +16,7 @@ export const get = async (req: Request, res: Response) => {
 
 export const create = async (req: Request, res: Response) => {
     try {
+        console.log(req.body);
         const { data } = await coingate.createOrder(req.body);
 
         const result = await createTransaction({
@@ -48,6 +49,8 @@ export const create = async (req: Request, res: Response) => {
 
         return sendResponse(res, _.first(result));
     } catch (error) {
+        console.log(error);
+
         return sendError(error, res);
     }
 };
