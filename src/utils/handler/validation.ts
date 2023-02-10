@@ -1,9 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import { z, AnyZodObject } from "zod";
 
-export default (bodySchema: AnyZodObject, paramsSchema?: AnyZodObject, querySchema?: AnyZodObject) =>
+export default (schema: AnyZodObject) =>
     async (req: Request, res: Response, next: NextFunction) => {
-        const schema = z.object({ body: bodySchema });
         try {
             await schema.parseAsync({
                 body: req.body,
