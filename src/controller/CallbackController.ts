@@ -11,7 +11,6 @@ export const handleCallback = async (req: Request, res: Response) => {
     try {
         const response = await updateTransaction(req.body);
         const data = _.first(response);
-        console.log(data);
 
         if (_.isEqual(data.status, OrderDataStatus.paid)) {
             await payment.paymentAuthorize({
@@ -25,7 +24,6 @@ export const handleCallback = async (req: Request, res: Response) => {
         await pusher.trigger(env.PUSHER_CALLBACK_CHANNEL, env.PUSHER_CALLBACK_EVENT, data);
         return sendResponse(res, "ok");
     } catch (error: any) {
-        console.log(error);
         return sendError(error, res);
     }
 };

@@ -18,6 +18,8 @@ interface IVariables {
     PUSHER_CALLBACK_CHANNEL: string;
     PUSHER_CALLBACK_EVENT: string;
     CLOUTCHAIN_PAYMENT_API_URL: string;
+    COINGATE_SUCCESS_PAGE: string;
+    COINGATE_CANCEL_PAGE: string;
 }
 
 export const env = <IVariables>{
@@ -36,4 +38,6 @@ export const env = <IVariables>{
     PUSHER_CALLBACK_CHANNEL: process.env.PUSHER_CALLBACK_CHANNEL,
     PUSHER_CALLBACK_EVENT: process.env.PUSHER_CALLBACK_EVENT,
     CLOUTCHAIN_PAYMENT_API_URL: process.env.CLOUTCHAIN_PAYMENT_API_URL,
+    COINGATE_SUCCESS_PAGE: process.env.COINGATE_SUCCESS_PAGE,
+    COINGATE_CANCEL_PAGE: process.env.COINGATE_CANCEL_PAGE,
 };
