@@ -8,8 +8,8 @@ const createOrder = async (body: ICreateOrderSchemaBody): AxiosPromise => {
 
     const order_id = await generateOrderId();
 
-    const success_url = `${env.COINGATE_SUCCESS_PAGE}?order_id=${order_id}`;
-    const cancel_url = `${env.COINGATE_CANCEL_PAGE}?order_id=${order_id}`;
+    const success_url = `${env.COINGATE_SUCCESS_PAGE}/${order_id}`;
+    const cancel_url = `${env.COINGATE_CANCEL_PAGE}/${order_id}`;
 
     return coingate.post("/orders", {
         ...body,
