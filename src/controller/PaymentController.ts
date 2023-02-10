@@ -48,6 +48,8 @@ export const create = async (req: Request, res: Response) => {
 
         return sendResponse(res, _.first(result));
     } catch (error) {
+        console.log(error);
+
         return sendError(error, res);
     }
 };

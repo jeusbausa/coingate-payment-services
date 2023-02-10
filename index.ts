@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import paymentRouter from "./src/routes/payment";
 import callbackRouter from "./src/routes/callback";
 import webhookRouter from "./src/routes/websocket";
+import redirectRouter from "./src/routes/redirect";
 
 import { _knex } from "./src/utils/knex";
 
@@ -16,6 +17,7 @@ app.use(cors({ credentials: true, origin: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/", redirectRouter);
 app.use("/api/payment", paymentRouter);
 app.use("/api/callback", callbackRouter);
 app.use("/webhook", webhookRouter);
