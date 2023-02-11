@@ -25,6 +25,7 @@ export const create = async (req: Request, res: Response) => {
             collection_uid: req.body.collection_uid,
             pack_type: req.body.pack_type,
             status: data.status,
+            fee: req.body.fee,
             title: data.title,
             do_not_convert: data.do_not_convert,
             orderable_id: data.orderable_id,

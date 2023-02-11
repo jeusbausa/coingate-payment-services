@@ -18,6 +18,7 @@ const createOrderSchemaBody = z.object({
     success_url: z.string().url().optional(),
     token: z.string().optional(),
     purchaser_email: z.string().email().optional(),
+    fee: z.number().optional(),
 });
 
 export const createOrderBodyValidation = z.object({

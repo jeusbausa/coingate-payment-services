@@ -12,6 +12,7 @@ export async function up(knex: Knex): Promise<void> {
         table.enum("pack_type", _.map(PackType, (type) => type));
         table.string("quantity");
         table.string("status");
+        table.decimal("fee", 15).defaultTo(0);
         table.string("title").nullable();
         table.boolean("do_not_convert");
         table.string("orderable_id");
